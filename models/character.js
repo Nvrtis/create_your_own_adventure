@@ -41,11 +41,11 @@ module.exports = function(sequelize, DataTypes) {
         })
     }
 
-    Character.associate = function(models) {
-        Character.hasOne(models.Inventory, {
-            onDelete: "cascade"
-        })
-    }
+    // Character.associate = function(models) {
+    //     Character.belongsTo(models.Inventory, {
+    //         onDelete: "cascade"
+    //     })
+    // }
     
     return Character;
 };
