@@ -1,6 +1,7 @@
 let sequelize = require("sequelize");
 let db = require("../models/");
 
+module.exports = function (app) {
 db.sequelize.sync().then(() => {
 let stories = [
     {//1
@@ -256,8 +257,7 @@ let stories = [
 
 
 ];
-console.log(db.MainStory)
-//db
+
 db.MainStory.bulkCreate(stories)
     .then(data => {
         console.log(data);
@@ -268,7 +268,4 @@ db.MainStory.bulkCreate(stories)
         process.exit(1);
     });
 })
-
-//add items to seed
-//mainstory items
-//throw items into inventory on character
+}
